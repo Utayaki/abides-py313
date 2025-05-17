@@ -27,4 +27,3 @@ isort                  # Import sorter
 
 # === Compatibility ===
 six                    # Python 2/3 compatibility helpers (used by various libs)
-
