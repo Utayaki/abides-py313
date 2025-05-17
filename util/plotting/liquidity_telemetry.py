@@ -172,8 +172,8 @@ def make_plots(plot_inputs, plot_params_dict, title=None, out_file="liquidity_te
 
     axes[2].xaxis.set_visible(False)
     # axes[0].legend(fontsize='large')
-    axes[2].set_ylabel("$\\frac{\\mathrm{best\ ask\ size}}{\\mathrm{best\ ask\ size} + \\mathrm{best\ bid\ size}}$",
-                       fontsize='large')
+    axes[2].set_ylabel(r"$\frac{\mathrm{best\ ask\ size}}{\mathrm{best\ ask\ size} + \mathrm{best\ bid\ size}}$",
+                       fontsize='large',)
     axes[2].set_xlim(xmin, xmax)
 
     #  middle plot -- liquidity events

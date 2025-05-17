@@ -90,11 +90,13 @@ def augment_with_VWAP(merged):
     vwap = (executed_df['PRICE'].multiply(executed_df['SIZE'])).cumsum() / executed_df['SIZE'].cumsum()
     vwap = vwap.to_frame(name='VWAP')
     merged = pd.merge(merged.reset_index(), vwap, how='left', left_index=True, right_index=True)
-    merged['VWAP'] = merged['VWAP'].fillna(method='ffill')
+    merged['VWAP'] = merged['VWAP'].ffill()
     merged['VWAP'] = merged['VWAP']
     merged = merged.set_index('index')
     merged = merged.drop(columns=['level_0'])
-    del merged.index.name
+    merged.index.name = None
+
+    # del merged.index.name
 
     return merged
 
